@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">FirstApplication</string>
     <string name="welcome">Hello,world!</string>
+
+    <!-- buttons-->
     <string name="button_1">Hi,I am a Button:)</string>
+    <string name="button_2">Run Finish</string>
+    <string name="button_3">Button 3</string>
 </resources>

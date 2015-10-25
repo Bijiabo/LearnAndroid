@@ -2,4 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/add_item" android:title="Add"></item>
     <item android:id="@+id/remove_item" android:title="Remove"></item>
+
+    <!-- intent-->
+    <item android:id="@+id/open_second_activity" android:title="SecondActivity"></item>
+    <item android:id="@+id/open_baidu" android:title="Baidu.com"></item>
+    <item android:id="@+id/open_Bijiabo" android:title="Bijiabo.com"></item>
+    <item android:id="@+id/call_10086" android:title="10086"></item>
 </menu>

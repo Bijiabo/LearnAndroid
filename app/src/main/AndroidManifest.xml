@@ -15,6 +15,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="com.bijiabo.activitytest.ACTION_START" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.bijiabo.activitytest.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:scheme="http" android:host="www.bijiabo.com"></data>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

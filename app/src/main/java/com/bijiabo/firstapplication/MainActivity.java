@@ -1,5 +1,7 @@
 package com.bijiabo.firstapplication;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //set button_2
+        Button button_2 = (Button) findViewById(R.id.button_2);
+        button_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         Log.v("Verbose","MainActivity onCreate function did run.");
 
 
@@ -49,6 +60,27 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.remove_item:
                 Toast.makeText(this, "You tapped Remove", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.open_second_activity:
+                //Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent("com.bijiabo.activitytest.ACTION_START");
+                intent.addCategory("com.bijiabo.activitytest.MY_CATEGORY");
+                startActivity(intent);
+                break;
+            case R.id.open_baidu:
+                intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.baidu.com"));
+                startActivity(intent);
+                break;
+            case R.id.open_Bijiabo:
+                intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.bijiabo.com"));
+                startActivity(intent);
+                break;
+            case R.id.call_10086:
+                intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:10086"));
+                startActivity(intent);
                 break;
             default:
         }
