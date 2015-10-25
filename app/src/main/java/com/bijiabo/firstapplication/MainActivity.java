@@ -1,5 +1,6 @@
 package com.bijiabo.firstapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -65,7 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 //Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 Intent intent = new Intent("com.bijiabo.activitytest.ACTION_START");
                 intent.addCategory("com.bijiabo.activitytest.MY_CATEGORY");
-                startActivity(intent);
+                String textString = getString(R.string.crazyOnes);
+                intent.putExtra("textString", textString);
+                //startActivity(intent);
+                startActivityForResult(intent, 1);
                 break;
             case R.id.open_baidu:
                 intent = new Intent(Intent.ACTION_VIEW);
@@ -85,5 +89,18 @@ public class MainActivity extends AppCompatActivity {
             default:
         }
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case 1:
+                if (resultCode == Activity.RESULT_OK) {
+                    String returnedData = data.getStringExtra("data_return");
+                    Log.d("MainActivity", returnedData);
+                }
+                break;
+            default:
+        }
     }
 }
